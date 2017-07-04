@@ -1,0 +1,32 @@
+# project: cj4j8xezmtdvv0130l95q2gkk
+# version: 2
+
+type User implements Node {
+  id: ID! @isUnique
+  email: String! @isUnique
+  name: String!
+  movies: [Movie!]! @relation(name: "MovieReviewer")
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+type Movie implements Node {
+  id: ID! @isUnique
+  description: String!
+  imageUrl: String!
+  avgRating: Int!
+  reviewer: User @relation(name: "MovieReviewer")
+  updatedAt: DateTime!
+  createdAt: DateTime!
+}
+
+type File implements Node {
+  id: ID! @isUnique
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  contentType: String!
+  name: String!
+  secret: String! @isUnique
+  size: Int!
+  url: String! @isUnique
+}
