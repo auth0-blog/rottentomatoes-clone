@@ -38,7 +38,7 @@ ReactDOM.render((
   <ApolloProvider client={client}>
     <Router history={browserHistory}>
       <Route path='/' component={ListMovie} />
-      <Route path='/create' component={CreateMovie} onEnter={requireAuth} />
+      <Route path='/create' component={CreateMovie} />
       <Route path="/callback" component={Callback} />
     </Router>
   </ApolloProvider>

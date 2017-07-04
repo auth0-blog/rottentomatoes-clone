@@ -17,7 +17,6 @@ class Nav extends Component {
 
           </li>
           <li>
-
             {
               ( isLoggedIn() ) ? <Link to="/create">Add Movies</Link> :  ''
             }
